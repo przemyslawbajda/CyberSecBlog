@@ -55,9 +55,8 @@
                                     </div>-->
                                 </div>
                                 <div class="userData ml-3">
-                                    <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold"> {{Auth::user()->name}} </h2>
-                                    <h10 class="d-block"> @if (Auth::user()->status_id == 1) Użytkownik @elseif (Auth::user()->status_id == 2) Administrator @endif </h10>
-<!--                                    <h6 class="d-block"> {{Auth::user()->id}} </h6>-->
+                                    <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold"> {{$user->name}} </h2>
+                                    <h10 class="d-block"> @if ($user->status_id == 1) Użytkownik @elseif ($user->status_id == 2) Administrator @endif </h10>
                                 </div>
                                 <div class="ml-auto">
                                     <input type="button" class="btn btn-primary d-none" id="btnDiscard" value="Discard Changes" />
@@ -82,7 +81,7 @@
                                                 <label style="font-weight:bold;">Nazwa użytkownika</label>
                                             </div>
                                             <div class="col-md-8 col-6">
-                                                {{Auth::user()->name}}
+                                                {{$user->name}}
                                             </div>
                                         </div>
                                         <hr />
@@ -92,7 +91,7 @@
                                                 <label style="font-weight:bold;">Email</label>
                                             </div>
                                             <div class="col-md-8 col-6">
-                                                {{Auth::user()->email}}
+                                                {{$user->email}}
                                             </div>
                                         </div>
                                         <hr />
@@ -103,18 +102,12 @@
                                                 <label style="font-weight:bold;">Status</label>
                                             </div>
                                             <div class="col-md-8 col-6">
-                                                @if (Auth::user()->email_verified_at == NULL) Niezweryfikowany @else Zweryfikowany @endif
+                                                @if ($user->email_verified_at == NULL) Niezweryfikowany @else Zweryfikowany @endif
                                             </div>
                                         </div>
                                         <hr />
                                         <div class="row" style="margin:2%">
-                                            <a style="margin-right:1%" href="{{route('updateuserform', Auth::user()->id )}}" class="btn btn-success btn-xs" title="Edytuj"> Edytuj </a>
                                             
-                                            <a style="margin-right:1%" href="{{route('deleteuser', Auth::user()->id )}}" class="btn btn-danger" title="Usun"> Usun konto </a>
-                                            @if (Auth::user()->status_id == 2) 
-                                            <a style="margin-right:1%" href="{{route('managePosts' )}}" class="btn btn-info" title="showposts"> Zarządzaj swoimi postami </a>
-                                            <a href="{{route('manageusers' )}}" class="btn btn-info" title="showusers"> Zarządzaj użytkownikami </a>
-                                            @endif
                                         </div>
 
 

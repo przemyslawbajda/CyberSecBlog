@@ -1,7 +1,7 @@
 
 
 <nav @if(Request::path() == 'shop' or Request::path() == 'login' or Request::path() == 'register' or Request::path() == 'home' or Request::path() == 'edit' or Request::is('updateuserform*') or Request::is('password*') or Request::is('email*')
-     or Request::is('addpost*') or Request::is('manageposts') )
+     or Request::is('addpost*') or Request::is('manageposts') or Request::is('user*') )
       style="background: black " @endif class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container" >
       <a class="navbar-brand" href="{{ route('index') }}">CyberBezpieczni</a>
@@ -64,7 +64,7 @@
 
 <style>
 /*    @if(Request::path() == 'shop' or Request::path() == 'login' or Request::path() == 'register' or Request::path() == 'home' or Request::path() == 'edit' or Request::is('updateuserform*') or Request::is('email*')
-       or Request::is('addpost*') or Request::is('manageposts'))*/
+       or Request::is('addpost*') or Request::is('manageposts') or Request::is('user*'))*/
     
     #mainNav .navbar-brand {
     color: white;

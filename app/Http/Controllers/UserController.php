@@ -16,7 +16,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::where('status_id', '=', '1')->get();
+        return view('usermanagement', compact('users'));
     }
 
     /**
@@ -26,7 +27,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -48,7 +49,14 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        if(!Auth::check() or Auth::user()->id != $id ){
+            $user=User::find($id);
+            return view('userInformation', compact('user'));
+            
+        }else{
+            return redirect('home');
+        }
+        
     }
 
     /**
@@ -113,14 +121,21 @@ class UserController extends Controller
         if(!$user = User::find($id)){
             return redirect('');
         }
-        
-        if (\Auth::user()->id != $user->id or !Auth::check()) { 
-            return redirect('');
-        }
-        
-        if($user->delete()) { 
-            return redirect('');
             
+        //Check if user is logged in
+        if (!Auth::check()) { 
+            return redirect('');
         }
+        
+        //Check if user is an owner of account or if he is an administrator 
+        if(\Auth::user()->id == $user->id or \Auth::user()->status_id == 2){
+            
+            if($user->delete()) { 
+                return redirect('');
+            
+            }
+             
+        } 
+        
     }
 }

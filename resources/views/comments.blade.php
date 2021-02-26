@@ -78,7 +78,7 @@
         <div class="col-sm-10">
             <div class="panel panel-default">
             <div class="panel-heading">
-                <strong>{{$comment->user->name}}</strong> <span class="text-muted">dodano {{$comment->updated_at}}</span> 
+                <strong><a href="{{ route('showuser', $comment->user->id) }}">{{$comment->user->name}}</a></strong> <span class="text-muted">dodano {{$comment->updated_at}}</span> 
                 @auth
                     
                     <div style="display: flex; justify-content: flex-end">

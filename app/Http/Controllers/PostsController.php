@@ -55,14 +55,16 @@ class PostsController extends Controller
 
     }
     
-    public function show($post_id){ //showing content of  post
+    //show content of  post
+    public function show($post_id){ 
         $comments = Comment::orderBy('updated_at', 'asc')->where('post_id', '=', $post_id)->get();
         $post= Post::find($post_id);
         $author = User::where('id', '=', $post->author_id)->first();
         return view('post1', compact('comments', 'post', 'author'));
     }
     
-    public function managePosts(){ //showing list of the posts written by user
+    //showing list of the posts written by user
+    public function managePosts(){ 
         $posts = Post::orderBy('created_at', 'asc')->where('author_id', '=', \Auth::user()->id)->get();
         
         return view('managePosts', compact('posts'));

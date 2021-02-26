@@ -41,14 +41,15 @@ Route::put('/update/{id}', [App\Http\Controllers\CommentsController::class, 'upd
 
 Route::get('/delete/{id}', [App\Http\Controllers\CommentsController::class, 'destroy'])->name('delete')->middleware('verified');
 
-//Route::get('post/{postnm}', [App\Http\Controllers\CommentsController::class, 'index'])->name('post');
-
 Route::get('/updateuserform/{id}', [App\Http\Controllers\UserController::class, 'edit'])->name('updateuserform')->middleware('verified');
 
 Route::put('/updateuser/{id}', [App\Http\Controllers\UserController::class, 'update'])->name('updateuser')->middleware('verified');
 
 Route::get('/deleteuser/{id}', [App\Http\Controllers\UserController::class, 'destroy'])->name('deleteuser')->middleware('verified');
 
+Route::get('/usermanagement', [App\Http\Controllers\UserController::class, 'index'])->name('manageusers')->middleware('checkAdmin');
+
+Route::get('/user/{id}', [App\Http\Controllers\UserController::class, 'show'])->name('showuser');
 
 //posts
 Route::get('/addpost', [App\Http\Controllers\PostsController::class, 'create'])->name('addpost')->middleware('checkAdmin');
