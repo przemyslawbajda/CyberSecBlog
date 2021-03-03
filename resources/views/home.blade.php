@@ -71,6 +71,9 @@
                                     <li class="nav-item">
                                         <a class="nav-link active" id="basicInfo-tab" data-toggle="tab" href="#basicInfo" role="tab" aria-controls="basicInfo" aria-selected="true">Podstawowe informacje</a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link " id="statistics-tab" data-toggle="tab" href="#statistics" role="tab" aria-controls="statistics" aria-selected="false">Statyski</a>
+                                    </li>
     
                                 </ul>
                                 <div class="tab-content ml-1" id="myTabContent">
@@ -119,10 +122,46 @@
 
 
                                     </div>
+                                    
+                                    <div class="tab-pane fade show " id="statistics" role="tabpanel" aria-labelledby="statistics-tab">
+                                        <div class="row">
+                                            <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;">Od</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                {{Auth::user()->created_at}}
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        
+                                        <div class="row">
+                                            <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;">Liczba komentarzy</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                {{Auth::user()->comments->count()}}
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        
+                                        <div class="row">
+                                            <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;">Liczba postów</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                {{Auth::user()->posts->count()}}
+                                            </div>
+                                        </div>
+                                        <hr />
+                
+                                        
+                                    </div>
+                                    
                                     <div class="tab-pane fade" id="connectedServices" role="tabpanel" aria-labelledby="ConnectedServices-tab">
                                         Facebook, Google, Twitter Account that are connected to this account
                                     </div>
                                 </div>
+                                
                             </div>
                         </div>
 

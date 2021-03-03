@@ -65,3 +65,8 @@ Route::get('/editpost/{post_id}', [App\Http\Controllers\PostsController::class, 
 Route::put('/updatepost/{post_id}', [App\Http\Controllers\PostsController::class, 'update'])->name('updatepost')->middleware('checkAdmin');
 
 Route::get('/deletepost/{post_id}', [App\Http\Controllers\PostsController::class, 'destroy'])->name('deletepost')->middleware('checkAdmin');
+
+Route::get('/authorposts/{id}', function ($id) {
+    $posts= Post::where('author_id', '=', $id)->get();
+    return view('authorPostsList', compact('posts'));
+})->name('authorpostlist');

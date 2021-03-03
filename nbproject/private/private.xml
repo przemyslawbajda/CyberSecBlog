@@ -3,18 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/xampp/htdocs/projekt_koncowy/resources/views/commentEdit.blade.php</file>
+            <file>file:/C:/xampp/htdocs/projekt_koncowy/resources/views/userInformation.blade.php</file>
+            <file>file:/C:/xampp/htdocs/projekt_koncowy/app/Models/User.php</file>
             <file>file:/C:/xampp/htdocs/projekt_koncowy/routes/web.php</file>
-            <file>file:/C:/xampp/htdocs/projekt_koncowy/public/css/posts.css</file>
-            <file>file:/C:/xampp/htdocs/projekt_koncowy/app/Http/Controllers/CommentsController.php</file>
             <file>file:/C:/xampp/htdocs/projekt_koncowy/app/Http/Controllers/PostsController.php</file>
             <file>file:/C:/xampp/htdocs/projekt_koncowy/resources/views/home.blade.php</file>
-            <file>file:/C:/xampp/htdocs/projekt_koncowy/resources/views/shop.blade.php</file>
+            <file>file:/C:/xampp/htdocs/projekt_koncowy/resources/views/authorPostsList.blade.php</file>
             <file>file:/C:/xampp/htdocs/projekt_koncowy/resources/views/post1.blade.php</file>
-            <file>file:/C:/xampp/htdocs/projekt_koncowy/app/Http/Controllers/HomeController.php</file>
-            <file>file:/C:/xampp/htdocs/projekt_koncowy/resources/views/index.blade.php</file>
-            <file>file:/C:/xampp/htdocs/projekt_koncowy/resources/views/addPosts.blade.php</file>
-            <file>file:/C:/xampp/htdocs/projekt_koncowy/resources/views/layouts/app.blade.php</file>
-            <file>file:/C:/xampp/htdocs/projekt_koncowy/public/css/newcss.css</file>
+            <file>file:/C:/xampp/htdocs/projekt_koncowy/app/Models/Comment.php</file>
+            <file>file:/C:/xampp/htdocs/projekt_koncowy/resources/views/managePosts.blade.php</file>
+            <file>file:/C:/xampp/htdocs/projekt_koncowy/app/Models/Post.php</file>
+            <file>file:/C:/xampp/htdocs/projekt_koncowy/resources/views/layouts/postTable.blade.php</file>
             <file>file:/C:/xampp/htdocs/projekt_koncowy/resources/views/comments.blade.php</file>
         </group>
     </open-files>

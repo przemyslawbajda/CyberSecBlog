@@ -50,7 +50,7 @@
             <h1>{{$post->header}}</h1>
             <h2 class="subheading">{{$post->subheader}}</h2>
             <span class="meta">Zamieszczony przez 
-              {{$author->name}}
+                <a href="{{route('showuser', $author->id)}}">{{$author->name}}</a>
               {{$post->created_at}} </span>
           </div>
         </div>

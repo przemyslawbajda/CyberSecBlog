@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     public function user(){
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'author_id');
     }
     
     protected $fillable = ["header", "subheader", "content", "author_id", "file_path", "created_at", "updated_at"];
